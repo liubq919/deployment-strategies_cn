@@ -3,15 +3,21 @@
 </p>
 
 
-部署策略，一直是一个很重要的课题。从web时代，就一直存在。近十年，由于公有云的普及与微服务架构模式的流行，部署策略诞生了很多新的概念。
+部署策略，一直是一个很重要的课题。从web时代，就一直存在。但是近十年，由于公有云的普及与微服务架构模式的流行，部署策略不仅诞生了很多新的概念，对人员的技术要求也发生了很大的改变。
 
-传统的IDC时代，管理员可能更关注业务的可用性。
+传统的IDC时代，由于业务量少，工具相对单一，管理员可能更关注业务的可用性。
 
-到了公有云时代，这个时候，只考虑业务可用性，可能已经不能符合业务场景的完全需求，每一种发布模式所消耗的资源，对目标用户的影响，回滚时间，服务不可用时间等，都需要管理员综合考虑才能做出最符合当前场景下的方案。
+到了公有云时代，由于微服务变的及其庞大，架构更加复杂，管理人员不仅仅需要熟练掌握相应的工具，更要熟知公司当前的整体架构。此时，只考虑业务可用性，可能已经不能完全符合业务场景的需求：
+- 产生的账单 - 每一种发布模式所消耗的资源
+- 对目标用户的影响 - 能否精确定位到用户
+- 回滚时间 - 如果发生异常，需要多长时间才能回滚
+- 服务不可用时间 - 是否有服务不可用时间
 
-同样，应用运行的载体，有虚拟机，也有容器。如何在每一种载体下，实现相应的部署策略，都需要熟悉掌握。
+管理员综合考虑才能做出最符合当前场景下的方案。
 
-[DevOps Engineering on AWS](https://aws.amazon.com/training/course-descriptions/devops-engineering/)，其整个课程体系对于在公有云下的Devops做出了详细的介绍与实践。同样，[AWS Certified DevOps Engineer - Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/)的考试中，对于[发布策略与自动化实现](https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS_certified_devops_engineer_professional_blueprint.pdf)的考核，也占据了55%，看来是一个合格的Devops人员必须要掌握的技能了。
+同样，应用运行的载体，有虚拟机，也有容器。在每一种载体下，实现相应的部署策略，都有差异，管理人员都必须熟练掌握。
+
+[DevOps Engineering on AWS](https://aws.amazon.com/training/course-descriptions/devops-engineering/)，其整个课程体系对于在AWS下的Devops做出了详细的介绍与实践。同样，[AWS Certified DevOps Engineer - Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/)的考试中，对于[发布策略与自动化实现](https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS_certified_devops_engineer_professional_blueprint.pdf)的考核，也占据了55%，看来发布策略与自动化实现是一个合格的Devops人员必须要掌握的技能了。
 
 |           Domain             |             % of Examination            |
 | --------------------------| ---------------------------- |
@@ -21,7 +27,7 @@
 | Domain 4: High Availability and Elasticity     |  15%|
 | TOTAL      |  100%|
 
-不仅仅是发布策略的实现，在不同载体下的具体实现方案，如自动化，每一个方案所产生的账单，架构及代码的落地等，管理员都需要关注。本系列，将在每一个策略下，阐述每一个细节的实现方案，以及综合维度下的各种对比，给读者一个综合的参考。
+本系列，将借鉴AWS的Devops培训方案与在工作中对kubernetes的实践，将在每一个策略下，阐述每一个实现方案的细节，以及综合维度下的各种对比，给读者一个综合的参考。
 
 注：本系列所使用的平台  
 
