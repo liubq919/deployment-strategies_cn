@@ -11,7 +11,7 @@
 - 产生的账单 - 每一种发布模式所消耗的资源
 - 对目标用户的影响 - 能否精确定位到用户
 - 回滚时间 - 如果发生异常，需要多长时间才能回滚
-- 服务不可用时间 - 是否有服务不可用时间
+- 服务不可用时间 - 是否影响业务连续性
 
 管理员综合考虑才能做出最符合当前场景下的方案。
 
@@ -33,13 +33,28 @@
 
 |   运行载体  |     平台  |
 | -----------| ----------|
-| 虚拟机 |   AWS   |
+| 虚拟机 |   AWS（EC2）   |
 | 容器 |  Kubernetes |
 
-##### [1: 就地部署(In-Place Deployment)](in_place_deployment.md)
-##### [2: 滚动部署(Rolling Deployment)](rolling_deployment.md)
-##### [3: 蓝绿部署(Blue/Green Deployment)](blue_green_deployment.md)
-##### [4: 重建部署(Recreate Deployment)](recreate_deployment.md)
-##### [5: 红黑部署(Red/Black Deployment)](red_black_deployment.md)
-##### [6: 金丝雀部署(Canary Deployment)](canary_deployment.md)
-##### [7: 不可变/用完及丢弃部署(Immutable/Disposable Deployment)](immutable_disposable_deployment.md)
+##### [1: 就地部署(In-Place Deployment)](in_place/in_place_deployment.md)
+##### [2: 滚动部署(Rolling Deployment)](rolling/rolling_deployment.md)
+##### [3: 蓝绿部署(Blue/Green Deployment)](blue_green/blue_green_deployment.md)
+##### [4: 重建部署(Recreate Deployment)](recreate/recreate_deployment.md)
+##### [5: 红黑部署(Red/Black Deployment)](red_black/red_black_deployment.md)
+##### [6: 金丝雀部署(Canary Deployment)](canary/canary_deployment.md)
+##### [7: 不可变/用完及丢弃部署(Immutable/Disposable Deployment)](immutable_disposable/immutable_disposable_deployment.md)
+##### [8: A/B部署(A/B Deployment)](a_b/a_b_deployment.md)
+
+#### 综合比较
+
+
+|部署方案| 部署速度 |  资源消耗  | Downtime  | 回滚时间  | 对用户的负面影响| 目标用户|
+|-------| -------| ---------| --------| --------| --------|--------|
+| 就地部署 | :sun_with_face: :sun_with_face: :sun_with_face: :sun_with_face: :sun_with_face: |  :sun_with_face:   | :o:   | :sun_with_face: | :o:  | :x: | 
+| 滚动部署 | :sun_with_face: :sun_with_face:  |  :sun_with_face:   | :x:   | :sun_with_face: :sun_with_face: :sun_with_face: | :x: | :x:|
+| 蓝绿部署 | :sun_with_face: :sun_with_face: :sun_with_face:  |  :sun_with_face: :sun_with_face: | :x:   | :sun_with_face: | :x: | :x: |
+| 重建部署 | :sun_with_face: :sun_with_face: :sun_with_face: :sun_with_face: :sun_with_face: |  :sun_with_face: | :o:  | :sun_with_face: :sun_with_face: | :o: | :x: |
+| 红黑部署 | :sun_with_face: :sun_with_face: :sun_with_face:  |  :sun_with_face: :sun_with_face: :sun_with_face:   | :x:   | :sun_with_face: | :x: | :x: |
+| 金丝雀部署 | :sun_with_face: :sun_with_face: :sun_with_face:  |  :sun_with_face: :sun_with_face: | :x:   | :sun_with_face: | :x: | :x: |
+| 不可变/用完及丢弃部署 | :sun_with_face: |  :sun_with_face: :sun_with_face:| :x: | :sun_with_face: :sun_with_face: :sun_with_face:| :x: | :x: |
+| A/B部署 | :sun_with_face: :sun_with_face: :sun_with_face:  |  :sun_with_face: :sun_with_face:  | :x:   | :sun_with_face:  | :x: | :o: |
